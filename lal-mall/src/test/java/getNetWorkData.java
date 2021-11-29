@@ -1,7 +1,7 @@
 import com.alibaba.fastjson.JSON;
-import com.uzykj.mall.MallApplication;
-import com.uzykj.mall.dao.*;
-import com.uzykj.mall.entity.*;
+import com.lal.mall.MallApplication;
+import com.lal.mall.dao.*;
+import com.lal.mall.entity.*;
 import entity.Base;
 import org.junit.Test;
 import org.junit.runner.RunWith;

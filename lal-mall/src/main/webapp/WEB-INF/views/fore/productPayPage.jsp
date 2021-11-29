@@ -17,8 +17,7 @@
     <%@ include file="include/navigator.jsp" %>
     <div class="header">
         <div id="mallLogo">
-            <a href="${pageContext.request.contextPath}"><img
-                    src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo-small2.png"></a>
+            <a href="${pageContext.request.contextPath}"></a>
         </div>
     </div>
 </nav>
@@ -29,7 +28,7 @@
             <hr/>
             <c:choose>
                 <c:when test="${fn:length(requestScope.productOrder.productOrderItemList)==1}">
-                    <div class="order_name">专家名称：
+                    <div class="order_name">商品名称：
                         <span>${requestScope.productOrder.productOrderItemList[0].productOrderItem_product.product_name}</span>
                     </div>
                     <div class="order_shop_name">
@@ -65,31 +64,35 @@
                 <table class="payment_table" border="0" cellspacing="0" cellpadding="0">
                     <tbody>
                     <tr>
+<%--                        <td>--%>
+<%--                            <a href="javascript:void(0);" class="selPayType1 current" lay-id="user1" paytype="51">--%>
+<%--                                <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/zhifubao.gif"--%>
+<%--                                     title="支付宝" width="140" height="40">--%>
+<%--                                <span></span>--%>
+<%--                            </a>--%>
+<%--                            <p></p>--%>
+<%--                        </td>--%>
                         <td>
-                            <a href="javascript:void(0);" class="selPayType1 current" lay-id="user1" paytype="51">
-                                <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/zhifubao.gif"
-                                     title="支付宝" width="140" height="40">
-                                <span></span>
-                            </a>
-                            <p></p>
-                        </td>
-                        <%--<td>
                             <a href="javascript:void(0);" class="selPayType1" lay-id="user2" paytype="84" >
                                 <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/weixin.gif" title="微信支付" width="140" height="40">
                                 <span></span>
                             </a>
-                            <p></p>
-                        </td>--%>
+                            <p>
+                                <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/pay.png" title="微信支付" width="140" height="140">
+                            </p>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
                 <!--花呗分期选择-->
                 <div id="divAlipayhb" class="instalments" style="display: none;"></div>
                 <!--end/花呗分期选择-->
-                <!-- <a  type="submit" class=" btn btn_big" value="立即支付">立即支付</a> -->
+<%--                <a  type="submit" class=" btn btn_big" value="立即支付">立即支付</a>--%>
+                <p onclick="PaySuccess()" class=" btn btn_big">支付成功</p>
                 <input id="hidCommonPayType" type="hidden" value="51">
             </div>
-            <a href="${pageContext.request.contextPath}/order/0/10" class="btn btn-danger">立即支付</a>
+<%--            href="${pageContext.request.contextPath}/order/0/10"--%>
+            <p onclick="pay()"  class="btn btn-danger">完成</p>
         </div>
     </form>
     <!-- <div class="order_pay_div">
@@ -190,6 +193,20 @@
                     alert("订单处理异常，请稍候再试！");
                 }
                 location.href = "/mall/" + data.url;
+            },
+            error: function () {
+                alert("订单支付出现问题，请重新支付！");
+            }
+        });
+    }
+
+    function PaySuccess() {
+        $.ajax({
+            url: "${pageContext.request.contextPath}/order/paySuccess/${requestScope.productOrder.productOrder_code}",
+            type: "get",
+            data: null,
+            success: function (data) {
+                alert("success")
             },
             error: function () {
                 alert("订单支付出现问题，请重新支付！");

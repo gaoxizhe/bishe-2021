@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "mybatis-3-mapper.dtd">
-<mapper namespace="com.uzykj.mall.dao.CategoryMapper">
-    <resultMap id="category" type="com.uzykj.mall.entity.Category">
+<mapper namespace="com.lal.mall.dao.CategoryMapper">
+    <resultMap id="category" type="com.lal.mall.entity.Category">
         <id property="category_id" column="category_id"/>
         <result property="category_name" column="category_name"/>
         <result property="category_image_src" column="category_image_src"/>

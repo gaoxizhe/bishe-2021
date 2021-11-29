@@ -145,9 +145,10 @@ function create(obj) {
         url: "/mall/order/orderItem",
         type: "PUT",
         data: JSON.stringify(orderItemMap),
+        contentType:'application/json',
+        dataType:"json",
         traditional: true,
         success: function (data) {
-            debugger
             data = typeof data === "string" ? JSON.parse(data) : data;
             if (data.success) {
                 location.href = "/mall/order/create/byCart?order_item_list=" + data.orderItemIDArray;

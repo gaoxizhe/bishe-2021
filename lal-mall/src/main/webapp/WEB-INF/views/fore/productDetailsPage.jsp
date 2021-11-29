@@ -10,8 +10,7 @@
 <nav>
     <%@ include file="include/navigator.jsp" %>
     <div class="header">
-        <a href="${pageContext.request.contextPath}"><img
-                src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo-small2.png" height="60" width="200"></a>
+        <a href="${pageContext.request.contextPath}"></a>
         <%-- <span class="shopNameHeader">贤趣${requestScope.product.product_category.category_name}官方旗舰店</span> --%>
         <input id="tid" type="hidden" value="${requestScope.product.product_category.category_id}"/>
         <%-- <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/detailsHeaderA.png"
@@ -83,8 +82,8 @@
         </div>
         <div class="qrcodeFooter">
             <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/scan_icon2.png">
-            <p>打开 <a href="https://mall.uzykj.com"></a> | <a
-                    href="https://uzykj.com/m"></a>扫一扫登录</p>
+            <p>打开 <a href="https://mall.baidu.com"></a> | <a
+                    href=" www.baidu.com/m"></a>扫一扫登录</p>
         </div>
         <div class="loginLinks">
             <a href="JavaScript:void(0)" id="pwdLogin">密码登录</a>
@@ -164,7 +163,7 @@
                 $(function () {
                     //点击购买按钮时
                     $(".context_buy_form").submit(function () {
-                        if ('${sessionScope.userId}' === "") {
+                        if ('${sessionScope.get('USER_ID')}' === "") {
                             location.href = "${pageContext.request.contextPath}/login";
                             return false;
                         }

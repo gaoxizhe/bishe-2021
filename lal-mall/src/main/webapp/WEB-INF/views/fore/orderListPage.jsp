@@ -81,8 +81,7 @@
     <%@ include file="include/navigator.jsp" %>
     <div class="header">
         <div id="mallLogo">
-            <a href="${pageContext.request.contextPath}"><img
-                    src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo-small2.png"></a>
+            <a href="${pageContext.request.contextPath}"></a>
         </div>
         <div class="shopSearchHeader">
             <form action="${pageContext.request.contextPath}/product" method="get">
@@ -225,7 +224,7 @@
                             </c:if>
                             <c:if test="${productOrder.productOrder_status==3 && productOrderItem.isReview != null && !productOrderItem.isReview}">
                                 <td class="td_order_content">
-                                    <a class="order_btn review_btn"
+                                    <a class="order_btn review_btn" disabled="" onclick="return false"
                                        href="${pageContext.request.contextPath}/review/${productOrderItem.productOrderItem_id}">评价</a>
                                 </td>
                             </c:if>

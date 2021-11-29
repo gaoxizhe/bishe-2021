@@ -2,14 +2,14 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "mybatis-3-mapper.dtd">
-<mapper namespace="com.uzykj.mall.dao.PropertyValueMapper">
+<mapper namespace="com.lal.mall.dao.PropertyValueMapper">
     <resultMap id="propertyValueMap" type="propertyValue">
         <id property="propertyValue_id" column="propertyvalue_id"/>
         <result property="propertyValue_value" column="propertyvalue_value"/>
-        <association property="propertyValue_property" javaType="com.uzykj.mall.entity.Property">
+        <association property="propertyValue_property" javaType="com.lal.mall.entity.Property">
             <id property="property_id" column="propertyvalue_property_id"/>
         </association>
-        <association property="propertyValue_product" javaType="com.uzykj.mall.entity.Product">
+        <association property="propertyValue_product" javaType="com.lal.mall.entity.Product">
             <id property="product_id" column="propertyvalue_product_id"/>
         </association>
     </resultMap>

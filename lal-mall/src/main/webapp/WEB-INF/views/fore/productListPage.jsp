@@ -10,8 +10,7 @@
     <%@ include file="include/navigator.jsp" %>
     <div class="header">
         <div id="mallLogo">
-            <a href="${pageContext.request.contextPath}"><img
-                    src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo-small2.png"></a>
+            <a href="${pageContext.request.contextPath}"></a>
         </div>
         <div class="shopSearchHeader">
             <form action="${pageContext.request.contextPath}/product" method="get">
@@ -85,7 +84,7 @@
                             <p class="context_product_status">
                                 <span class="status_left">总成交<em><c:choose><c:when
                                         test="${product.product_sale_count != null}">${product.product_sale_count}</c:when><c:otherwise>0</c:otherwise></c:choose>笔</em></span>
-                                <span class="status_middle">评价<em>${product.product_review_count}</em></span>
+                                <span class="status_middle" disabled="" onclick="return false">评价<em>${product.product_review_count}</em></span>
                                 <span class="status_right">
                                    <%-- <img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/T11lggFoXcXXc1v.nr-93-93.png"/>--%>
                                 </span>

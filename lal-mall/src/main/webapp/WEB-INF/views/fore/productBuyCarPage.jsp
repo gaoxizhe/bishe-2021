@@ -43,8 +43,7 @@
     <%@ include file="include/navigator.jsp" %>
     <div class="header">
         <div id="mallLogo">
-            <a href="${pageContext.request.contextPath}"><img
-                    src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo-small2.png"><span
+            <a href="${pageContext.request.contextPath}"><span
                     class="span_tmallBuyCar">购物车</span></a>
         </div>
         <div class="shopSearchHeader">

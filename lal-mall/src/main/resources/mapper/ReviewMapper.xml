@@ -2,18 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "mybatis-3-mapper.dtd">
-<mapper namespace="com.uzykj.mall.dao.ReviewMapper">
+<mapper namespace="com.lal.mall.dao.ReviewMapper">
     <resultMap id="reviewMap" type="review">
         <id column="review_id" property="review_id"/>
         <result column="review_content" property="review_content"/>
         <result column="review_createDate" property="review_createDate"/>
-        <association property="review_user" javaType="com.uzykj.mall.entity.User">
+        <association property="review_user" javaType="com.lal.mall.entity.User">
             <id property="user_id" column="review_user_id"/>
         </association>
-        <association property="review_product" javaType="com.uzykj.mall.entity.Product">
+        <association property="review_product" javaType="com.lal.mall.entity.Product">
             <id property="product_id" column="review_product_id"/>
         </association>
-        <association property="review_orderItem" javaType="com.uzykj.mall.entity.ProductOrderItem">
+        <association property="review_orderItem" javaType="com.lal.mall.entity.ProductOrderItem">
             <id property="productOrderItem_id" column="review_orderItem_id"/>
         </association>
     </resultMap>

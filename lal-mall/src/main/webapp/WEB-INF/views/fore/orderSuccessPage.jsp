@@ -10,8 +10,7 @@
 </nav>
 <div class="header">
     <div id="mallLogo">
-        <a href="${pageContext.request.contextPath}"><img
-                src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo-small2.png"></a>
+        <a href="${pageContext.request.contextPath}"></a>
     </div>
     <div class="shopSearchHeader">
         <form action="${pageContext.request.contextPath}/product" method="get">

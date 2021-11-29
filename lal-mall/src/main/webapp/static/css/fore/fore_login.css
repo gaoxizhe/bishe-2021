@@ -6,6 +6,7 @@
     background-color: rgb(241, 220, 165);
     font-family: "Microsoft YaHei UI", serif;
     background:url(../../images/fore/WebsiteImage/bz.jpg) no-repeat;
+    background-size: cover;
 }
 
 .content > .contentMain {

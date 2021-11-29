@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "mybatis-3-mapper.dtd">
-<mapper namespace="com.uzykj.mall.dao.AdminMapper">
-    <resultMap id="admin" type="com.uzykj.mall.entity.Admin">
+<mapper namespace="com.lal.mall.dao.AdminMapper">
+    <resultMap id="admin" type="com.lal.mall.entity.Admin">
         <id property="admin_id" column="admin_id"/>
         <result property="admin_name" column="admin_name"/>
         <result property="admin_nickname" column="admin_nickname"/>
@@ -11,7 +11,7 @@
         <result property="admin_profile_picture_src" column="admin_profile_picture_src"/>
     </resultMap>
 
-    <insert id="insertOne" parameterType="com.uzykj.mall.entity.Admin">
+    <insert id="insertOne" parameterType="com.lal.mall.entity.Admin">
         INSERT admin(admin_id,admin_name,admin_nickname,admin_password,admin_profile_picture_src)
         VALUES (
         null,
@@ -21,7 +21,7 @@
         #{admin.admin_password},
         #{admin.admin_profile_picture_src})
     </insert>
-    <update id="updateOne" parameterType="com.uzykj.mall.entity.Admin">
+    <update id="updateOne" parameterType="com.lal.mall.entity.Admin">
         UPDATE admin
         <set>
             <if test="admin.admin_profile_picture_src != null">admin_profile_picture_src =

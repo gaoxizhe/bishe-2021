@@ -43,7 +43,6 @@
 </script>
 
     <div class="header">
-         <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/logo.png"></a>
         <div class="mallSearch">
             <form action="${pageContext.request.contextPath}/product" method="get">
                 <div class="mallSearch-input">
@@ -66,7 +65,7 @@
     </div>
     <div class="header-wrap">
 	    <div class="home_nav">
-		   <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/static/images/fore/WebsiteImage/mallsmal.png"></a>
+		   <a href="${pageContext.request.contextPath}"></a>
 		        <div class="mallSearch">
 	            <form action="${pageContext.request.contextPath}/product" method="get">
 	                <div class="mallSearch-input">
