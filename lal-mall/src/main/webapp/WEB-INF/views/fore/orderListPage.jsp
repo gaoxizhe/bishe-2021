@@ -2,7 +2,7 @@
 <%@ include file="include/header.jsp" %>
 <head>
     <link href="${pageContext.request.contextPath}/static/css/fore/fore_orderList.css" rel="stylesheet"/>
-    <title>我的书店</title>
+    <title>我的</title>
     <script>
 
 
