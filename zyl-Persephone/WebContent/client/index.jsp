@@ -7,11 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		if (window.location.href != "http://localhost:8080/Persephone/ShowIndex") {
-			window.location.href="${pageContext.request.contextPath}/ShowIndex";
-		}
-	});
+	<%--$(document).ready(function(){--%>
+	<%--	// if (window.location.href != "http://localhost:8080/Persephone/ShowIndex") {--%>
+	<%--		window.location.href="${pageContext.request.contextPath}/ShowIndex";--%>
+	<%--	// }--%>
+	<%--});--%>
 </script>
 <title>Home</title>
 </head>

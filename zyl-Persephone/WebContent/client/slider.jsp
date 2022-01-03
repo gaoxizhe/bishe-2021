@@ -7,7 +7,7 @@
             <div class="hero-slider">
 
                 <!-- hero-slide-item -->
-                <div class="hero-slide-item" style="background-image:url(${pageContext.request.contextPath}/client/img/slider3.jpg);">
+                <div class="hero-slide-item" style="background-image:url(${pageContext.request.contextPath}/client/img/slider1.jpg);">
                     <div class="container">
                                 
                         <div class="hero-inner">
@@ -22,7 +22,7 @@
                 </div>
 
                 <!-- hero-slide-item -->
-                <div class="hero-slide-item" style="background-image:url(${pageContext.request.contextPath}/client/img/slider1.jpg);">
+                <div class="hero-slide-item" style="background-image:url(${pageContext.request.contextPath}/client/img/slider3.jpg);">
                     <div class="container">
      
                         <div class="hero-inner2">

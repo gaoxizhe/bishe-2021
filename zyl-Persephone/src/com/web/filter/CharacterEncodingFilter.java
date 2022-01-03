@@ -14,29 +14,39 @@ import javax.servlet.http.HttpServletRequestWrapper;
 
 /**
  * 字符编码过滤器
- * @author 王佳祺
  *
+ * @author 王佳祺
  */
 public class CharacterEncodingFilter implements Filter {
 
-	protected String encoding = null;
-	protected FilterConfig filterConfig = null;
+    protected String encoding = "utf-8";
+    protected FilterConfig filterConfig = null;
 
-	public void init(FilterConfig filterConfig) throws ServletException {
-		this.filterConfig = filterConfig;
-		this.encoding = filterConfig.getInitParameter("encoding");
-	}
+    public void init(FilterConfig filterConfig) throws ServletException {
+        this.filterConfig = filterConfig;
+        this.encoding = filterConfig.getInitParameter("encoding");
+    }
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		if (encoding != null) {
-			request.setCharacterEncoding(encoding);
-			response.setContentType("text/html; charset="+encoding);
-		}
-		chain.doFilter(request, response);
-	}
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        if (encoding != null) {
+            HttpServletRequest req = (HttpServletRequest) request;
+            StringBuffer requestURL = req.getRequestURL();
+            if (requestURL.toString().contains(".")) {
+                String substring = requestURL.substring(requestURL.lastIndexOf("."), requestURL.length());
+                System.out.println(requestURL + "----------" + substring);
+                if (substring.equals("png")) {
+                    chain.doFilter(request, response);
+                }
+            }
+            request.setCharacterEncoding(encoding);
+            response.setContentType("text/html; charset=" + encoding);
 
-	public void destroy() {
-		this.encoding = null;
-		this.filterConfig = null;
-	}
+        }
+        chain.doFilter(request, response);
+    }
+
+    public void destroy() {
+        this.encoding = null;
+        this.filterConfig = null;
+    }
 }

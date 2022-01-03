@@ -13,9 +13,9 @@ import java.sql.ResultSet;
 public class JDBCUtil {
 	
 	//static：静态     final：最终
-	static final String url = "jdbc:mysql://localhost:3307/summer_proj?autoReconnect=true&useSSL=false&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai";//连接数据库的url
+	static final String url = "jdbc:mysql://lunwen.sosozj.cn:3307/summer_proj?autoReconnect=true&useSSL=false&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai";//连接数据库的url
 	static final String user = "root";//连接数据库的用户名
-	static final String password = "root";//连接数据库的密码
+	static final String password = "GAOxi11223344@";//连接数据库的密码
 	
 	static Connection conn = null;//数据库连接对象
 	static PreparedStatement  ps = null;//预编译对象

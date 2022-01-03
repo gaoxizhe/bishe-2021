@@ -45,7 +45,7 @@
                     
                     <div class="categories">
                         <button ><i class="flaticon-list"></i>
-                        <span>Categories</span></button>
+                        <span>分类</span></button>
                         <ul>
                             <li><a href="${pageContext.request.contextPath}/showProductByPage?DrinkType=All"><i class="flaticon-apple"></i> 全部饮品</a></li>
                             <li><a href="${pageContext.request.contextPath}/showProductByPage?DrinkType=MilkTea"><i class="flaticon-apple"></i> 醇香奶茶</a></li>
@@ -66,7 +66,7 @@
                             <option value="Tea">原沏茗作</option>
                         </select>
                         <input type="search" placeholder="Search" name="searchfield" onmouseover="this.focus();" required>
-                        <button type="submit" >Search</button>
+                        <button type="submit" >搜索</button>
                     </form>
                     
                     <div class="menu-collections">
