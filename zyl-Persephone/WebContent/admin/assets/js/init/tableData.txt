@@ -1,0 +1,16 @@
+{
+"data": [
+[
+{"userid":"1"},
+{"username":"Tiger Nixon"},
+{"userpwd":"5421985"},
+{"userphone":"18574512458"}
+],
+[
+{"userid":"2"},
+{"username":"erghudu"},
+{"userpwd":"965214"},
+{"userphone":"15987454669"}
+]
+]
+}

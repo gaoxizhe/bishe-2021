@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+#drinktable tr th{
+	font-size:14px;
+}
+/*
+#drinktable th,td{
+	max-width:120px;
+	white-space: nowrap;
+	word-break:break-all; 
+}*/
+#drinktable tr td.spec{
+	font-size:10px;
+	width:80px;
+	word-break:break-all; 
+}
+#drinktable tr td.name{
+	width:80px;
+	word-break:break-all; 
+}
+
+.kv-avatar .krajee-default.file-preview-frame,.kv-avatar .krajee-default.file-preview-frame:hover {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+.kv-avatar {
+    display: inline-block;
+}
+.kv-avatar .file-input {
+    display: table-cell;
+    width: 213px;
+}
+.kv-reqd {
+    color: red;
+    font-family: monospace;
+    font-weight: normal;
+}
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
+#drinktable tr td.addr{
+	width:150px;
+	word-break:break-all; 
+}
