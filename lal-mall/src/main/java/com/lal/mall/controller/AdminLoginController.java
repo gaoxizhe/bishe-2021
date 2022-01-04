@@ -35,6 +35,7 @@ public class AdminLoginController {
                              @RequestParam String password) {
         JSONObject object = new JSONObject();
         object.put("success", false);
+        // 判断输入的用户名
         if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
             log.warn("参数有误");
         }

@@ -110,10 +110,10 @@
 .header-inner .menu-search {
     display: flex;
     align-items: center;
-    width: 100%;
     margin-left: 65px;
     border-radius: 10px;
     border: 1px solid #F3F3F3;
+    justify-content: space-between;
 }
 
 .menu-search .nice-select {
@@ -154,7 +154,6 @@
 }
 
 .header-inner .menu-search input {
-    width: 60%;
     margin: 0 0 0 50px;
 }
 
@@ -398,7 +397,7 @@
 }
 .hero-inner {
     max-width: 700px;
-    position: relative;
+    /*position: relative;*/
     left:700px;
 }
 .hero-inner2 {

@@ -19,14 +19,17 @@ import javax.servlet.http.HttpServletRequestWrapper;
  */
 public class CharacterEncodingFilter implements Filter {
 
-    protected String encoding = "utf-8";
+    protected String encoding = null;
     protected FilterConfig filterConfig = null;
 
+    @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         this.filterConfig = filterConfig;
-        this.encoding = filterConfig.getInitParameter("encoding");
+//        this.encoding = filterConfig.getInitParameter("encoding");
+        this.encoding = "utf-8";
     }
 
+    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         if (encoding != null) {
             HttpServletRequest req = (HttpServletRequest) request;
@@ -34,8 +37,14 @@ public class CharacterEncodingFilter implements Filter {
             if (requestURL.toString().contains(".")) {
                 String substring = requestURL.substring(requestURL.lastIndexOf("."), requestURL.length());
                 System.out.println(requestURL + "----------" + substring);
-                if (substring.equals("png")) {
+                if (".png".equals(substring)
+                        || ".jpg".equals(substring)
+                        || ".js".equals(substring)
+                        || ".css".equals(substring)
+                        || ".woff2".equals(substring)
+                ) {
                     chain.doFilter(request, response);
+                    return;
                 }
             }
             request.setCharacterEncoding(encoding);
@@ -45,6 +54,7 @@ public class CharacterEncodingFilter implements Filter {
         chain.doFilter(request, response);
     }
 
+    @Override
     public void destroy() {
         this.encoding = null;
         this.filterConfig = null;

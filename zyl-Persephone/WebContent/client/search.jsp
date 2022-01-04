@@ -74,7 +74,7 @@
                         <div class="shop-sidebar">
                             <div class="shop-widget b1">
                                 <div class="shop-widget-title">
-                                    <h5><i class="flaticon-list"></i>Categories</h5>
+                                    <h5><i class="flaticon-list"></i>类别</h5>
                                 </div>
                                 <ul>
                                     <li><a href="${pageContext.request.contextPath}/showProductByPage?DrinkType=All"><i class="flaticon-apple"></i> 全部饮品</a></li>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="shop-widget b1">
                                 <div class="shop-widget-title">
-                                    <h5>Best Sale Today</h5>
+                                    <h5>今日畅销</h5>
                                 </div>
                                 <div class="product list-product d-flex align-items-center bg-white br-5 mb-30">
                                     <div class="product-img-wrap">
@@ -101,7 +101,7 @@
                                         <div class="product-action">
                                             <a href="#" class="add-to-btn small-btn">
                                                 <i class="flaticon-shopping-cart"></i>
-                                                <span>Add to Cart</span>
+                                                <span>添加到购物车</span>
                                                 <h5 class="product-price">$120.00</h5>
                                             </a>
                                         </div>
@@ -150,12 +150,12 @@
                         <div class="shop-items">
                            
                             <div class="search-result-header">
-                                <h5>Showing ${bean.totalCount} Drinks</h5>
+                                <h5>显示 ${bean.totalCount} 饮品</h5>
                                 <div class="sort-by">
-                                    <h5>Sort:</h5>
+                                    <h5>排序:</h5>
                                     <select name="#">
-                                        <option value="value-1">ALL</option>
-                                        <option value="value-2">By Name</option>
+                                        <option value="value-1">所有</option>
+                                        <option value="value-2">名称</option>
                                     </select>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
                                             	<img src="${pageContext.request.contextPath}/client/img/${drink.picAddres}" alt="img">
                                             	<!-- Button trigger modal -->
                                             	<button class="quick-view" type="button" id="${drink.drinkID}"
-													data-toggle="modal" data-target="#quick-view" onclick="showModal(this.id)">Quick View</button>
+													data-toggle="modal" data-target="#quick-view" onclick="showModal(this.id)">查看详情</button>
                                         	</div>
 
                                         	<div class="product-content-wrap">
@@ -181,7 +181,7 @@
                                                 	<a data-toggle="modal" data-target="#quick-view" class="add-to-btn small-btn"
 														id="${drink.drinkID}" onclick="showModal(this.id)">
                                                     	<i class="flaticon-shopping-cart"></i>
-                                                    	<span>Quick View</span>
+                                                    	<span>查看详情</span>
                                                     	<h5 class="product-price">￥${drink.drinkPrice_Medium}~￥${drink.drinkPrice_Super}</h5>
                                                 	</a>
                                                 
