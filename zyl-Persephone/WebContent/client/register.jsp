@@ -84,10 +84,10 @@
 										<a href="javascript:void(0);" onclick="changeImage()">看不清换一张</a>
                                     </div>
                                     <div class="alternative-login">
-                                        Do You Have Account ?<a class="signup-link" href="${pageContext.request.contextPath}/client/login.jsp">Login</a>
+                                        已经拥有账户 ?<a class="signup-link" href="${pageContext.request.contextPath}/client/login.jsp">登录</a>
                                     </div> 
                                     <div class="signin-button-wrap">
-                                        <button type="submit" class="btn-bg2">Sign Up</button>
+                                        <button type="submit" class="btn-bg2">注册</button>
                                     </div>
 
                                 </form>

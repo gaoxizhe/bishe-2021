@@ -60,10 +60,10 @@
                                     </div>
                                     <div class="alternative-login">
                                         <span><a href="${pageContext.request.contextPath}/client/#">Forget Password</a></span>
-                                        <span>Don't Have Account ?<a class="signup-link" href="${pageContext.request.contextPath}/client/register.jsp">Sign Up</a></span>
+                                        <span>还没有账户 ?<a class="signup-link" href="${pageContext.request.contextPath}/client/register.jsp">注册</a></span>
                                     </div> 
                                     <div class="signin-button-wrap">
-                                        <button type="submit" class="btn-bg2">Login</button>
+                                        <button type="submit" class="btn-bg2">登录</button>
                                     </div>
 
                                 </form>
