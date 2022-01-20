@@ -5,31 +5,31 @@
         </div>
         <div class="logo-content">
             <span class="hello">Hello ，</span>
-            <span class="tips">欢迎使用Tduck！</span>
+            <span class="tips">欢迎使用本系统！</span>
             <el-tabs v-if="formType=='login'" v-model="loginType" class="login-form-tab">
-                <el-tab-pane v-if="enableWx" label="微信扫码登录" name="wx">
-                    <div class="wx-login">
-                        <div class="flex-center">
-                            <el-image
-                                v-loading="wxQrCodeLoading"
-                                :src="wxLoginQrCode"
-                                class="wx-login-qrcode"
-                                fit="fill"
-                                @load="(e)=>{
-                                    this.wxQrCodeLoading=false
-                                }"
-                            />
-                        </div>
-                        <div class="text-center">
-                            <el-link :underline="false"
-                                     icon="el-icon-refresh-left"
-                                     @click="getLoginWxQrCode"
-                            >
-                                刷新二维码
-                            </el-link>
-                        </div>
-                    </div>
-                </el-tab-pane>
+                <!--                <el-tab-pane v-if="enableWx" label="微信扫码登录" name="wx">-->
+                <!--                    <div class="wx-login">-->
+                <!--                        <div class="flex-center">-->
+                <!--                            <el-image-->
+                <!--                                v-loading="wxQrCodeLoading"-->
+                <!--                                :src="wxLoginQrCode"-->
+                <!--                                class="wx-login-qrcode"-->
+                <!--                                fit="fill"-->
+                <!--                                @load="(e)=>{-->
+                <!--                                    this.wxQrCodeLoading=false-->
+                <!--                                }"-->
+                <!--                            />-->
+                <!--                        </div>-->
+                <!--                        <div class="text-center">-->
+                <!--                            <el-link :underline="false"-->
+                <!--                                     icon="el-icon-refresh-left"-->
+                <!--                                     @click="getLoginWxQrCode"-->
+                <!--                            >-->
+                <!--                                刷新二维码-->
+                <!--                            </el-link>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </el-tab-pane>-->
                 <el-tab-pane label="账号密码登录" name="account">
                     <el-form ref="accountLoginForm" :model="accountForm" :rules="accountLoginRules"
                              class="account-login-form"
@@ -55,22 +55,22 @@
                             <el-link class="ml-20 link-btn" @click="formType='reg'">立即注册</el-link>
                         </el-form-item>
                         <div class="other-login">
-                            <span @click="redirectUrl(qqLoginAuthorizeUrl)">
-                                <svg-icon class="other-login-icon" name="loginQQ" />
-                            </span>
+                            <!--                            <span @click="redirectUrl(qqLoginAuthorizeUrl)">-->
+                            <!--                                <svg-icon class="other-login-icon" name="loginQQ" />-->
+                            <!--                            </span>-->
                         </div>
                     </el-form>
                 </el-tab-pane>
             </el-tabs>
             <register v-else @success="registerSuccessHandle" />
-            <p class="desc">
-                关于TDuckApp登录
-            </p>
-            <p class="desc">
-                若微信扫码失败，请打开 微信授权页面 登录 若QQ登录填鸭云异常，
-                可查阅 帮助文档 若因微信、QQ、公众号冻结或账号密码找回失败等
-                无法登录，可 自助申请 登录账号
-            </p>
+            <!--            <p class="desc">-->
+            <!--                关于App登录-->
+            <!--            </p>-->
+            <!--            <p class="desc">-->
+            <!--                若微信扫码失败，请打开 微信授权页面 登录 若QQ登录心里在线云异常，-->
+            <!--                可查阅 帮助文档 若因微信、QQ、公众号冻结或账号密码找回失败等-->
+            <!--                无法登录，可 自助申请 登录账号-->
+            <!--            </p>-->
         </div>
     </div>
 </template>
@@ -143,6 +143,7 @@ export default {
         } else {
             this.loginType = 'account'
         }
+        this.loginType = 'account'
     },
     destroyed() {
         clearInterval(this.refreshWxQrcodeTimer)

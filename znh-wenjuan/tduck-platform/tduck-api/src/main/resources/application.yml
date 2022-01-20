@@ -78,6 +78,6 @@ platform:
 
 aj:
   captcha:
-    enable: true
+    enable: false
     water-mark: tduck
     cache-type: redis

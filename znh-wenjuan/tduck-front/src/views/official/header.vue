@@ -2,17 +2,6 @@
     <div class="top-header">
         <img class="logo" src="@/assets/images/official/TDUCK@2x.png">
         <div>
-            <span class="menu-item" @click="$router.push({path:'/'})">首页</span>
-            <a class="menu-item" href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">开源项目</a>
-            <a class="menu-item" href="https://doc.tduckapp.com/" target="_blank">开发文档</a>
-            <span class="menu-item" @click="$router.push({path:'/payService'})">付费服务</span>
-            <span class="menu-item add-contact-me">加入社群
-                <div>
-                    <img src="@/assets/images/official/contact_me_qr.png">
-                </div>
-            </span>
-        </div>
-        <div>
             <el-button v-if="isLogin" @click="$router.push({path:'/home'})">控 制 台</el-button>
             <el-button v-if="!isLogin" @click="$router.push({path:'/login'})">
                 登 录

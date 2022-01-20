@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div v-for="template in templateList" :key="template.id" class="project-template-view">
-                        <img :src="template.coverImg?template.coverImg:'https://i.niupic.com/images/2021/01/08/99d0.png'" style="width: 100%; height: 133px;">
+                        <img src="@/assets/images/img.png" style="width: 100%; height: 133px;">
                         <p class="project-template-title">
                             {{ template.name }}
                         </p>

@@ -48,12 +48,6 @@
                                 </el-col>
                             </el-row>
                             <el-divider class="divider-width" />
-                            <p class="login-tip">关于TDuckApp登录</p>
-                            <p class="login-tip">
-                                若微信扫码失败，请打开 微信授权页面 登录
-                                若QQ登录填鸭云异常，可查阅 帮助文档
-                                若因微信、QQ、公众号冻结或账号密码找回失败等无法登录，可 自助申请 登录账号
-                            </p>
                         </div>
                     </el-tab-pane>
                     <el-tab-pane label="账号密码登录" name="account">

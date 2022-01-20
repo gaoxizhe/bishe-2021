@@ -12,6 +12,7 @@
     <artifactId>tduck-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tduck-api</name>
+    <packaging>jar</packaging>
     <description>填鸭客户端服务</description>
 
     <properties>

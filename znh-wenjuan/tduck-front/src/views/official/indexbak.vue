@@ -7,17 +7,6 @@
             <div id="headerNav" :class="{'is-fixed' : isFixed}" class="top-header">
                 <img class="logo" src="@/assets/images/official/TDUCK@2x.png" @click="$router.push({path:'/'})">
                 <div>
-                    <span class="menu-item" @click="$router.push({path:'/'})">首页</span>
-                    <a class="menu-item" href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">开源项目</a>
-                    <a class="menu-item" href="https://doc.tduckapp.com/" target="_blank">开发文档</a>
-                    <span class="menu-item" @click="$router.push({path:'/payService'})">付费服务</span>
-                    <span class="menu-item add-contact-me">加入社群
-                        <div>
-                            <img src="@/assets/images/official/contact_me_qr.png">
-                        </div>
-                    </span>
-                </div>
-                <div>
                     <el-button v-if="isLogin" @click="$router.push({path:'/home'})">控 制 台</el-button>
                     <el-button v-if="!isLogin" @click="$router.push({path:'/login'})">
                         登 录
@@ -25,16 +14,16 @@
                 </div>
             </div>
             <div class="content-header">
-                <div class="left">
-                    <p class="slogan animate__animated animate__fadeInLeftBig">
-                        让企业轻松拥有问卷系统
-                    </p>
-                    <p class="slogan-desc animate__animated animate__fadeInLeftBig">
-                        TDuck - Have what you want,
-                        get you income.
-                    </p>
-                    <el-button @click="$router.push({path:'/home'})">立即体验</el-button>
-                </div>
+                <!--                <div class="left">-->
+                <!--                    <p class="slogan animate__animated animate__fadeInLeftBig">-->
+                <!--                        让企业轻松拥有问卷系统-->
+                <!--                    </p>-->
+                <!--                    <p class="slogan-desc animate__animated animate__fadeInLeftBig">-->
+                <!--                        TDuck - Have what you want,-->
+                <!--                        get you income.-->
+                <!--                    </p>-->
+                <!--                    <el-button @click="$router.push({path:'/home'})">立即体验</el-button>-->
+                <!--                </div>-->
                 <div class="right">
                     <img
                         class="image"
@@ -97,43 +86,43 @@
             <div class="top">
                 <div>
                     <p class="title">关于我们</p>
-                    <p class="desc">
-                        TDuck — 是一款能够帮助
-                        你进行信息收集、市场开拓、
-                        客户挖掘并展开持续营销活 动的管理平台。
-                    </p>
+                    <!--                    <p class="desc">-->
+                    <!--                        TDuck — 是一款能够帮助-->
+                    <!--                        你进行信息收集、市场开拓、-->
+                    <!--                        客户挖掘并展开持续营销活 动的管理平台。-->
+                    <!--                    </p>-->
                 </div>
-                <div>
-                    <p class="title">项目地址</p>
-                    <a href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">Gitee码云</a>
-                    <a href="https://github.com/TDuckCloud/tduck-platform" target="_blank">Github</a>
-                </div>
-                <div>
-                    <p class="title">联系方式</p>
-                    <p class="desc">pr@tduckapp.com</p>
-                    <p class="desc">+86 15080929435</p>
-                    <p class="desc"> 加入团队 mama@tduckapp.com</p>
-                </div>
-                <div>
-                    <p class="title">友情地址</p>
-                    <a href="https://element.eleme.cn/#/zh-CN/" target="_blank">ElementUI</a>
-                    <a href="https://gitee.com/mrhj/form-generator" target="_blank"> form-generator</a>
-                </div>
-                <div class="qrcode">
-                    <div>
-                        <img src="@/assets/images/official/wxmpqrcode.png">
-                        <p class="desc">填鸭-公众号</p>
-                    </div>
-                    <div>
-                        <img src="@/assets/images/official/contact_me_qr.png">
-                        <p class="desc">官方社群</p>
-                    </div>
-                </div>
+                <!--                <div>-->
+                <!--                    <p class="title">项目地址</p>-->
+                <!--                    <a href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">Gitee码云</a>-->
+                <!--                    <a href="https://github.com/TDuckCloud/tduck-platform" target="_blank">Github</a>-->
+                <!--                </div>-->
+                <!--                <div>-->
+                <!--                    <p class="title">联系方式</p>-->
+                <!--                    <p class="desc">pr@tduckapp.com</p>-->
+                <!--                    <p class="desc">+86 15080929435</p>-->
+                <!--                    <p class="desc"> 加入团队 mama@tduckapp.com</p>-->
+                <!--                </div>-->
+                <!--                <div>-->
+                <!--                    <p class="title">友情地址</p>-->
+                <!--                    <a href="https://element.eleme.cn/#/zh-CN/" target="_blank">ElementUI</a>-->
+                <!--                    <a href="https://gitee.com/mrhj/form-generator" target="_blank"> form-generator</a>-->
+                <!--                </div>-->
+                <!--                <div class="qrcode">-->
+                <!--                    <div>-->
+                <!--                        <img src="@/assets/images/official/wxmpqrcode.png">-->
+                <!--                        <p class="desc">心里在线-公众号</p>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <img src="@/assets/images/official/contact_me_qr.png">-->
+                <!--                        <p class="desc">官方社群</p>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
             <div class="bottom">
-                <p>本站由 ucloud 提供云服务器</p>
-                <p>本站由 又拍云 提供CDN加速/云储存服务</p>
-                <p>Copyright © 2021 TDuckApp. All Rights Reserved. 湘ICP备18023961号-2 版权所有</p>
+                <p>本站由阿里云提供云服务器</p>
+                <p>本站提供CDN加速/云储存服务</p>
+                <p>晋ICP备11111111版权所有</p>
             </div>
         </div>
     </div>

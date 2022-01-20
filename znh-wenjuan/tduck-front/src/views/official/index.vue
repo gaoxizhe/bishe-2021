@@ -17,18 +17,18 @@
                         alt="img"
                     >
                 </div>
-                <div class="header-menu" :class="{ 'header-menu-open': isMenuShow }">
-                    <a @click="$router.push({path:'/'})">首页</a>
-                    <a href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">开源项目</a>
-                    <a class="menu-item" href="https://doc.tduckapp.com/" target="_blank">开发文档</a>
-                    <a @click="$router.push({path:'/payService'})">付费服务</a>
-                    <a class="add-contact-me">
-                        加入社群
-                        <div>
-                            <img src="@/assets/images/official/contact_me_qr.png">
-                        </div>
-                    </a>
-                </div>
+                <!--                <div class="header-menu" :class="{ 'header-menu-open': isMenuShow }">-->
+                <!--                    <a @click="$router.push({path:'/'})">首页</a>-->
+                <!--                    <a href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">开源项目</a>-->
+                <!--                    <a class="menu-item" href="https://doc.tduckapp.com/" target="_blank">开发文档</a>-->
+                <!--                    <a @click="$router.push({path:'/payService'})">付费服务</a>-->
+                <!--                    <a class="add-contact-me">-->
+                <!--                        加入社群-->
+                <!--                        <div>-->
+                <!--                            <img src="@/assets/images/official/contact_me_qr.png">-->
+                <!--                        </div>-->
+                <!--                    </a>-->
+                <!--                </div>-->
 
                 <div class="header-btn">
                     <el-button v-if="isLogin" @click="$router.push({path:'/home'})">控 制 台</el-button>
@@ -47,127 +47,18 @@
             <div id="back-box" class="back-box" />
             <div id="content-page" class="content-page">
                 <div class="content-explain">
-                    <h1 data-aos="fade-up" data-aos-duration="1000">让企业轻松拥有问卷系统</h1>
-                    <h1 data-aos="fade-up" data-aos-duration="1100">TDuck - Have what you want, get you income.</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1000">大学生心里健康测试系统</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1100">College Students' mental health test system.</h1>
                     <div data-aos="fade-up" data-aos-duration="1200">
-                        <el-button class="banner-button-start" @click="onStart">开始使用</el-button>
-                        <el-button class="banner-button-preview" @click="$router.push({path:'/home'})">在线预览</el-button>
+                        <!--                        <el-button class="banner-button-start" @click="onStart">开始使用</el-button>-->
+                        <el-button class="banner-button-preview" @click="$router.push({path:'/home'})">进入主页</el-button>
                     </div>
                 </div>
                 <div id="image" data-aos="fade-up" class="image">
                     <img :src="require('@/assets/images/official/banner02.svg')">
                 </div>
             </div>
-            <div class="content-wrapper">
-                <div class="en-title" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">OUR STRENGTHS</div>
-                <el-row :gutter="2" class="content-wrapper-features">
-                    <el-col :xs="24" :md="8" data-aos="fade-right">
-                        <p class="title">无保留，全开源</p>
-                        <p>遵循《阿里巴巴Java开发手册》编码规范，代码全量开源</p>
-                    </el-col>
-                    <el-col :xs="24" :md="8" data-aos="fade-up">
-                        <p class="title">简洁，不失强大</p>
-                        <p>基于 Element + VUE 前端框架，界面简洁，独特美感</p>
-                    </el-col>
-                    <el-col :xs="24" :md="8" data-aos="fade-left">
-                        <p class="title">所见，即所得</p>
-                        <p>无需编程，拖拽可视化模板或组件，即可生成精美问卷</p>
-                    </el-col>
-                </el-row>
-                <div data-aos="zoom-in" data-aos-duration="1000" class="content-wrapper-image">
-                    <img src="@/assets/images/official/desc1.png">
-                </div>
-                <div class="content-wrapper-solutions">
-                    <p class="title">我们的解决方案</p>
-                    <el-row>
-                        <el-col :xs="24" :md="8">
-                            <div class="solution-item" data-aos="zoom-out-up" data-aos-duration="1000">
-                                <p class="title">客户体验</p>
-                                <img src="@/assets/images/official/solution1.png">
-                                <p class="desc">客户满意度 宾馆服务满意度</p>
-                                <p class="desc">餐厅满意度调查 公共服务满意度</p>
-                                <p class="desc">旅游服务满意度 经销商满意度</p>
-                                <p @click="$router.push({ path: '/home' })">前往体验 ></p>
-                            </div>
-                        </el-col>
-                        <el-col :xs="24" :md="8" data-aos="zoom-out-up">
-                            <div class="solution-item" data-aos-duration="1000">
-                                <p class="title">市场调研</p>
-                                <img src="@/assets/images/official/solution2.png">
-                                <p class="desc">餐饮市场调查 手机市场调查</p>
-                                <p class="desc">培训市场调查 消费者调查</p>
-                                <p class="desc">APP市场调查 女性消费者偏好调查</p>
-                                <p @click="$router.push({ path: '/home' })">前往体验 ></p>
-                            </div>
-                        </el-col>
-                        <el-col :xs="24" :md="8" data-aos="zoom-out-up">
-                            <div class="solution-item" data-aos-duration="1000">
-                                <p class="title">报名登记</p>
-                                <img src="@/assets/images/official/solution3.png">
-                                <p class="desc">才艺比赛报名 粉丝活动报名</p>
-                                <p class="desc">聚餐出游报名 活动/会务微信报名</p>
-                                <p class="desc">讲座公开课报名 商品订单</p>
-                                <p @click="$router.push({ path: '/home' })">前往体验 ></p>
-                            </div>
-                        </el-col>
-                    </el-row>
-                </div>
-                <div class="content-wrapper-company">
-                    <p class="title">他们都在使用</p>
-                    <img data-aos="zoom-in" src="@/assets/images/official/use-commony.png">
-                </div>
-            </div>
         </el-main>
-        <el-footer :style="style.footer">
-            <div class="footer-page">
-                <el-row :gutter="20" class="footer-content">
-                    <el-col :xs="24" :md="6" data-aos="fade-up" data-aos-delay="100">
-                        <h1>关于我们</h1>
-                        <p>
-                            TDuck — 是一款能够帮助
-                            你进行信息收集、市场开拓、
-                            客户挖掘并展开持续营销活 动的管理平台。
-                        </p>
-                    </el-col>
-                    <el-col :xs="24" :md="4" :offset="1" class="project-url" data-aos="fade-up" data-aos-delay="200">
-                        <h1>项目地址</h1>
-                        <a href="https://gitee.com/TDuckApp/tduck-platform" target="_blank">Gitee码云</a>
-                        <a href="https://github.com/TDuckCloud/tduck-platform" target="_blank">Github</a>
-                    </el-col>
-                    <el-col :xs="24" :md="5" data-aos="fade-up" data-aos-delay="300">
-                        <h1>联系方式</h1>
-                        <span>pr@tduckapp.com</span>
-                        <span>+86 15080929435</span>
-                        <span> 加入团队 mama@tduckapp.com</span>
-                    </el-col>
-                    <el-col :xs="24" :md="4" data-aos="fade-up" data-aos-delay="400">
-                        <h1>友情地址</h1>
-                        <a href="https://element.eleme.cn/#/zh-CN/" target="_blank">ElementUI</a>
-                        <a href="https://gitee.com/mrhj/form-generator" target="_blank"> form-generator</a>
-                    </el-col>
-                    <el-col :xs="24" :md="4" data-aos="fade-up" data-aos-delay="500">
-                        <div class="qrcode">
-                            <div>
-                                <img src="@/assets/images/official/wxmpqrcode.png">
-                                <p class="desc">填鸭-公众号</p>
-                            </div>
-                            <div>
-                                <img src="@/assets/images/official/contact_me_qr.png">
-                                <p class="desc">官方社群</p>
-                            </div>
-                        </div>
-                    </el-col>
-                </el-row>
-                <div class="footer-copyright" data-aos="fade-down" data-aos-anchor-placement="top-bottom">
-                    <p>本站由 ucloud 提供云服务器</p>
-                    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTEiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAxMTEgMzgiPgogIDxnIGZpbGw9IiNGRkZGRkYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xKSI+CiAgICA8cGF0aCBkPSJNMzAuOCw0LjEgTDMwLjgsNC4xIEwzMC44LDQuMSBMMzAuOCw0LjEgTDMwLjgsNC4xIEMzMC4xLDMuNiAyOS40LDMuMSAyOC42LDIuNyBDMjguMSwyLjQgMjcuNCwyLjUgMjcsMyBMMjIuMyw5LjIgTDIyLDkuNiBDMjEuNSwxMC4zIDIwLjcsMTAuNiAxOS45LDEwLjYgTDE5LDEwLjYgQzE2LjcsMTAuNyAxNC40LDExLjkgMTIuOSwxMy45IEMxMS43LDE1LjUgMTEuMSwxNy40IDExLjIsMTkuMyBDMTEuMiwxOS42IDExLjQsMTkuOSAxMS43LDIwLjEgQzEyLjMsMjAuNCAxMi44LDIxIDEzLDIxLjcgQzEzLjIsMjIuOCAxMi41LDIzLjggMTEuNSwyNC4xIEMxMC4zLDI0LjUgOSwyMy43IDguNywyMi41IEM4LjUsMjEuOCA4LjcsMjEuMiA5LjEsMjAuNyBDOS4zLDIwLjQgOS40LDIwLjEgOS40LDE5LjcgQzkuMiwxNy4zIDkuOCwxNC44IDExLjQsMTIuNyBDMTMuNCwxMC4xIDE2LjQsOC43IDE5LjUsOC43IEMyMC4xLDguNyAyMC42LDguNCAyMSw3LjkgTDI1LjMsMi4yIEMyNS42LDEuOCAyNS40LDEuMSAyNC45LDEgQzE3LjcsLTEgOS43LDEuNCA0LjgsNy43IEMtMS40LDE1LjggMC4xLDI3LjUgOC4yLDMzLjggQzksMzQuNCA5LjcsMzQuOSAxMC42LDM1LjQgQzExLjEsMzUuNyAxMS44LDM1LjYgMTIuMiwzNS4xIEwxNi45LDI4LjkgTDE3LjIsMjguNSBDMTcuNywyNy44IDE4LjUsMjcuNSAxOS4zLDI3LjUgTDIwLjIsMjcuNSBDMjIuNSwyNy40IDI0LjgsMjYuMiAyNi4zLDI0LjIgQzI3LjUsMjIuNiAyOC4xLDIwLjcgMjgsMTguOCBDMjgsMTguNSAyNy44LDE4LjIgMjcuNSwxOCBDMjYuOSwxNy43IDI2LjQsMTcuMSAyNi4yLDE2LjQgQzI2LDE1LjMgMjYuNywxNC4zIDI3LjcsMTQgQzI4LjksMTMuNiAzMC4yLDE0LjQgMzAuNSwxNS42IEMzMC43LDE2LjMgMzAuNSwxNi45IDMwLjEsMTcuNCBDMjkuOSwxNy43IDI5LjgsMTggMjkuOCwxOC40IEMzMCwyMC44IDI5LjQsMjMuMyAyNy44LDI1LjQgQzI1LjgsMjggMjIuOCwyOS40IDE5LjcsMjkuNCBDMTkuMSwyOS40IDE4LjYsMjkuNyAxOC4yLDMwLjIgTDE0LDM1LjYgQzEzLjcsMzYgMTMuOSwzNi43IDE0LjQsMzYuOCBDMjEuNiwzOC45IDI5LjcsMzYuNSAzNC41LDMwLjEgQzQwLjcsMjIgMzksMTAuMyAzMC44LDQuMSBaIi8+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MyA4KSI+CiAgICAgIDxwYXRoIGQ9Ik0xOC42LDIgTDE4LjYsMS42IEMxOC42LDEuMiAxOC4zLDEgMTgsMSBMMy41LDEgQzMuMiwxIDIuOSwxLjMgMi45LDEuNiBMMi45LDIuNSBDMi45LDIuOCAzLjIsMy4xIDMuNSwzLjEgTDE1LjgsMy4xIEMxNi4yLDMuMSAxNi40LDMuNCAxNi40LDMuOCBDMTYuMSw2LjEgMTUsMTAuNCAxMS42LDE0LjUgQzExLjQsMTQuOCAxMC45LDE0LjggMTAuNywxNC41IEM3LjksMTAuOSA3LDcuMiA2LjgsNS44IEM2LjcsNS41IDYuNSw1LjMgNi4yLDUuMyBMNS43LDUuMyBMNS4zLDUuMyBDNSw1LjMgNC43LDUuNiA0LjgsNiBDNS4xLDcuNiA2LjEsMTEuOSA5LjUsMTYgQzkuNywxNi4yIDkuNywxNi42IDkuNSwxNi44IEM1LjUsMjAuNSAxLjgsMjEuMyAwLjUsMjEuNSBDMC4yLDIxLjUgNy4xMDU0MjczNmUtMTUsMjEuOCA3LjEwNTQyNzM2ZS0xNSwyMi4xIEw3LjEwNTQyNzM2ZS0xNSwyMyBDNy4xMDU0MjczNmUtMTUsMjMuMyAwLjMsMjMuNiAwLjYsMjMuNiBDMi4xLDIzLjQgNi4zLDIyLjUgMTAuOCwxOC4zIEMxMSwxOC4xIDExLjQsMTguMSAxMS42LDE4LjMgQzEzLjgsMjAuMyAxNi42LDIyLjMgMjAuNCwyMy41IEMyMC43LDIzLjYgMjEsMjMuNCAyMS4xLDIzLjEgTDIxLjQsMjIuMyBDMjEuNSwyMiAyMS4zLDIxLjcgMjEsMjEuNiBDMTcuNSwyMC41IDE1LDE4LjcgMTMsMTYuOSBDMTIuOCwxNi43IDEyLjgsMTYuMyAxMywxNi4xIEMxOC41LDkuNCAxOC42LDIuMyAxOC42LDIgWiIvPgogICAgICA8cGF0aCBkPSJNMjguNiwwLjEgTDI3LjcsMC4xIEMyNy40LDAuMSAyNy4xLDAuNCAyNy4xLDAuNyBMMjcuMSwzLjggQzI3LjEsNC4xIDI2LjgsNC40IDI2LjUsNC40IEwyNC40LDQuNCBDMjQuMSw0LjQgMjMuOCw0LjcgMjMuOCw1IEwyMy44LDUuOSBDMjMuOCw2LjIgMjQuMSw2LjUgMjQuNCw2LjUgTDI2LjUsNi41IEMyNi44LDYuNSAyNy4xLDYuOCAyNy4xLDcuMSBMMjcuMSwxMS42IEMyNy4xLDExLjkgMjYuOCwxMi4yIDI2LjUsMTIuMiBMMjQuNCwxMi4yIEMyNC4xLDEyLjIgMjMuOCwxMi41IDIzLjgsMTIuOCBMMjMuOCwxMy43IEMyMy44LDE0IDI0LjEsMTQuMyAyNC40LDE0LjMgTDI2LjUsMTQuMyBDMjYuOCwxNC4zIDI3LjEsMTQuNiAyNy4xLDE0LjkgTDI3LjEsMTkuMiBDMjcuMSwyMC4xIDI2LjcsMjEuNiAyNC40LDIxLjggQzI0LjEsMjEuOCAyMy45LDIyLjEgMjMuOSwyMi40IEwyMy45LDIzIEMyMy45LDIzLjMgMjQuMiwyMy42IDI0LjUsMjMuNiBDMjYuOCwyMy40IDI5LjIsMjIuMSAyOS4yLDE4LjkgTDI5LjIsMTQuNiBDMjkuMiwxNC4zIDI5LjUsMTQgMjkuOCwxNCBMMzEuNywxNCBDMzIsMTQgMzIuMywxMy43IDMyLjMsMTMuNCBMMzIuMywxMi41IEMzMi4zLDEyLjIgMzIsMTEuOSAzMS43LDExLjkgTDI5LjgsMTEuOSBDMjkuNSwxMS45IDI5LjIsMTEuNiAyOS4yLDExLjMgTDI5LjIsNi44IEMyOS4yLDYuNSAyOS41LDYuMiAyOS44LDYuMiBMMzEuNyw2LjIgQzMyLDYuMiAzMi4zLDUuOSAzMi4zLDUuNiBMMzIuMyw0LjcgQzMyLjMsNC40IDMyLDQuMSAzMS43LDQuMSBMMjkuOCw0LjEgQzI5LjUsNC4xIDI5LjIsMy44IDI5LjIsMy41IEwyOS4yLDAuNiBDMjkuMiwwLjMgMjksMC4xIDI4LjYsMC4xIFoiLz4KICAgICAgPHBhdGggZD0iTTMzLjIsMjIuOCBDMzMuMiwyMy4xIDMzLjUsMjMuNCAzMy44LDIzLjQgTDQwLjMsMjMuNCBDNDMuMiwyMy40IDQ1LjUsMjEuMiA0NS41LDE4LjQgTDQ1LjUsNC43IEM0NS41LDQuNCA0NS4yLDQuMSA0NC45LDQuMSBMMzMuOCw0LjEgQzMzLjUsNC4xIDMzLjIsNC40IDMzLjIsNC43IEwzMy4yLDIyLjggWiBNNDAuNCwyMS40IEwzNS45LDIxLjQgQzM1LjYsMjEuNCAzNS4zLDIxLjEgMzUuMywyMC44IEwzNS4zLDE0LjYgQzM1LjMsMTQuMyAzNS42LDE0IDM1LjksMTQgTDQzLDE0IEM0My4zLDE0IDQzLjYsMTQuMyA0My42LDE0LjYgTDQzLjYsMTguNCBDNDMuNiwyMC4xIDQyLjEsMjEuNCA0MC40LDIxLjQgWiBNNDMuNiw2LjcgTDQzLjYsMTEuNCBDNDMuNiwxMS43IDQzLjMsMTIgNDMsMTIgTDM1LjksMTIgQzM1LjYsMTIgMzUuMywxMS43IDM1LjMsMTEuNCBMMzUuMyw2LjcgQzM1LjMsNi40IDM1LjYsNi4xIDM1LjksNi4xIEw0Myw2LjEgQzQzLjMsNi4yIDQzLjYsNi40IDQzLjYsNi43IFoiLz4KICAgICAgPHBhdGggZD0iTTQyLjEsMCBMMzYuMywwIEMzNiwwIDM1LjcsMC4zIDM1LjcsMC42IEwzNS43LDEuNSBDMzUuNywxLjggMzYsMi4xIDM2LjMsMi4xIEw0Mi4xLDIuMSBDNDIuNCwyLjEgNDIuNywxLjggNDIuNywxLjUgTDQyLjcsMC42IEM0Mi43LDAuMyA0Mi41LDAgNDIuMSwwIFoiLz4KICAgICAgPHBhdGggZD0iTTY0LjIsMC45IEw1Mi4yLDAuOSBDNTEuOSwwLjkgNTEuNiwxLjIgNTEuNiwxLjUgTDUxLjYsMi40IEM1MS42LDIuNyA1MS45LDMgNTIuMiwzIEw2NC4yLDMgQzY0LjUsMyA2NC44LDIuNyA2NC44LDIuNCBMNjQuOCwxLjUgQzY0LjgsMS4yIDY0LjUsMC45IDY0LjIsMC45IFoiLz4KICAgICAgPHBhdGggZD0iTTU5LjEsMTEuMiBMNjcuNSwxMS4yIEM2Ny44LDExLjIgNjguMSwxMC45IDY4LjEsMTAuNiBMNjguMSw5LjcgQzY4LjEsOS40IDY3LjgsOS4xIDY3LjUsOS4xIEw0OC45LDkuMSBDNDguNiw5LjEgNDguMyw5LjQgNDguMyw5LjcgTDQ4LjMsMTAuNiBDNDguMywxMC45IDQ4LjYsMTEuMiA0OC45LDExLjIgTDU0LjYsMTEuMiBDNTUuMSwxMS4yIDU1LjMsMTEuNyA1NS4xLDEyLjEgTDUxLjMsMTkgQzUxLjIsMTkuMiA1MS4xLDE5LjMgNTEuMSwxOS41IEM1MC44LDIwLjQgNTAuOSwyMS40IDUxLjUsMjIuMiBDNTIuMSwyMyA1My4xLDIzLjYgNTQuMiwyMy42IEw2NC42LDIzLjYgQzY1LjEsMjMuNiA2NS41LDIzLjQgNjUuNywyMyBDNjUuOSwyMi42IDY2LDIyLjEgNjUuOCwyMS43IEw2My40LDE3IEM2My4zLDE2LjcgNjIuOSwxNi42IDYyLjYsMTYuOCBMNjEuOCwxNy4yIEM2MS41LDE3LjMgNjEuNCwxNy43IDYxLjYsMTggTDYzLDIwLjggQzYzLjIsMjEuMiA2Mi45LDIxLjYgNjIuNSwyMS42IEw1NC4yLDIxLjYgQzUzLjgsMjEuNiA1My40LDIxLjQgNTMuMiwyMS4xIEM1My4xLDIxIDUyLjksMjAuNyA1MywyMC4zIEM1MywyMC4yIDUzLDIwLjIgNTMuMSwyMC4xIEw1Ny43LDEyIEM1OCwxMS41IDU4LjUsMTEuMiA1OS4xLDExLjIgWiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==">
-                    </a>
-                    <p><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">本站由 又拍云 提供CDN加速/云储存服务</a></p>
-                    <p>Copyright © 2021 TDuckApp. All Rights Reserved. 湘ICP备18023961号-2 版权所有</p>
-                </div>
-            </div>
-        </el-footer>
     </el-container>
 </template>
 
@@ -240,7 +131,7 @@ export default {
                 that.screenWidth = window.screenWidth
             })()
         }
-        this.msgCard()
+        // this.msgCard()
     },
     methods: {
         // 屏幕滚动方法
