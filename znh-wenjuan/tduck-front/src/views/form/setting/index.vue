@@ -81,7 +81,7 @@
                         <el-input
                             v-model="userProjectSettingData.submitJumpUrl"
                             :show-word-limit="true"
-                            placeholder="https://demo.tduckapp.com"
+                            placeholder="https://demo..com"
                             @change="saveUserProjectSetting"
                         />
                     </el-col>

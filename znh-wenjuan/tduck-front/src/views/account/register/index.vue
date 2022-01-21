@@ -1,38 +1,7 @@
 <template>
     <div class="register-container">
-        <p class="tips">注册成为Tduck体验用户~</p>
+        <p class="tips">注册成为心里问卷系统体验用户~</p>
         <el-tabs v-model="regType" class="register-form">
-            <el-tab-pane label="手机号注册" name="regPhone">
-                <el-form ref="phoneRegForm" :model="accountForm" :rules="phoneRegRules" label-width="0px">
-                    <el-form-item label="" prop="phoneNumber">
-                        <el-input v-model="accountForm.phoneNumber" prefix-icon="el-icon-user-solid" autocomplete="off" placeholder="请输入手机号" />
-                    </el-form-item>
-                    <el-form-item label="" prop="password">
-                        <el-input v-model="accountForm.password" autocomplete="off" placeholder="请输入密码"
-                                  show-password
-                                  prefix-icon="el-icon-lock"
-                        />
-                    </el-form-item>
-                    <el-form-item label="" prop="code">
-                        <el-input v-model="accountForm.code" autocomplete="off" class="code-input"
-                                  placeholder="请输入验证码"
-                        >
-                            <font-icon
-                                slot="prefix"
-                                class=" el-input__icon fa fa-shield"
-                            />
-                        </el-input>
-                        <el-button :disabled="phoneValidateCodeBtn" class="ml-20" type="primary"
-                                   @click="sendPhoneCodeHandle"
-                        >
-                            {{ phoneValidateCodeBtnText }}
-                        </el-button>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button class="width-full" type="primary" @click="phoneRegHandle">确定</el-button>
-                    </el-form-item>
-                </el-form>
-            </el-tab-pane>
             <el-tab-pane label="邮箱注册" name="regEmail">
                 <el-form ref="emailRegForm" :model="accountForm" :rules="emailRegRules" label-width="0px"
                          status-icon
@@ -79,7 +48,7 @@ export default {
     name: 'Register',
     data() {
         return {
-            regType: 'regPhone',
+            regType: 'regEmail',
             accountForm: {
                 email: '',
                 phoneNumber: '',

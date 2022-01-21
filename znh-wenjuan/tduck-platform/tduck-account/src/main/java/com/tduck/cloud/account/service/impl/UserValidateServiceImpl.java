@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class UserValidateServiceImpl implements UserValidateService {
 
-    private final static String REG_EMAIL_TITLE = "TDuck注册验证码";
+    private final static String REG_EMAIL_TITLE = "在线心里问卷系统注册验证码";
     private final static String RESET_PWD_EMAIL_TITLE = "重置密码";
     private final RedisUtils redisUtils;
     private final MailService mailService;

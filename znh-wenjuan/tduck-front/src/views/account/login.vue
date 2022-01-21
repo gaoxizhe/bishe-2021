@@ -77,7 +77,7 @@
                                     </el-col>
                                     <el-col :span="10">
                                         <el-link :underline="false" class="protocol-tip" type="primary">
-                                            《TDuck用户服务协议》
+                                            《用户服务协议》
                                         </el-link>
                                     </el-col>
                                     <el-col :offset="1" :span="6">
