@@ -34,6 +34,11 @@ public class CharacterEncodingFilter implements Filter {
         if (encoding != null) {
             HttpServletRequest req = (HttpServletRequest) request;
             StringBuffer requestURL = req.getRequestURL();
+            // 获取图片验证码
+            if (requestURL.toString().contains("imageCode")) {
+                chain.doFilter(request, response);
+                return;
+            }
             if (requestURL.toString().contains(".")) {
                 String substring = requestURL.substring(requestURL.lastIndexOf("."), requestURL.length());
                 System.out.println(requestURL + "----------" + substring);

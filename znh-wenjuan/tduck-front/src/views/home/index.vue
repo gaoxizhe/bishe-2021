@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div slot="reference">
-                            <img v-if="getUserInfo" :src="getUserInfo.avatar" class="user-avatar">
+                            <img v-if="getUserInfo" src="@/assets/images/user.png" class="user-avatar">
                         </div>
                     </el-popover>
                 </div>
@@ -58,7 +58,7 @@
                     </el-main>
                     <el-footer>
                         <div class="about-container">
-                            <span class="desc-text"><a href="https://demo.tduckapp.com" target="view_window">关于心里在线</a></span>
+                            <span class="desc-text"><a href="" target="view_window">关于心里在线</a></span>
                         </div>
                     </el-footer>
                 </el-container>

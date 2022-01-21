@@ -27,9 +27,9 @@ spring:
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
   mail:
-    host: smtp.exmail.qq.com
-    username: mpw:9jwi2HILb4x+eVy2fA0SYeits0G3qlm/YajJdX0OKQU=
-    password: mpw:kLAEhMW75jvbXovAGdf4gEoe2/j6OJMaK2GYhTD8b8A=
+    host: smtp.163.com
+    username: gaoxizhe1238@163.com
+    password: LOKTELVBJIIUELUQ
 
 logging:
   level:
@@ -40,10 +40,10 @@ platform:
   oss:
     ossType: 1
     endpoint: 12
-    accessKeyId: mpw:vT2DiLH0raFqd2+10sAGbvhyYQsWKuxj2YOnXAh+ZhAsMkhqcQBSa5tQosuposvs
-    accessKeySecret: mpw:ZRJuLL9+aiBq+9PUN3wjrglLNvuK2yhKhrnSzw5P36P/E9QP4EIOIObeQvYjpaV/
-    bucketName: tduck-cloud
-    domain: https://qiniu.smileyi.top
+    accessKeyId: b7Yiyyl7N2rGDwTRdTbrgXzZzwOTP-64Ucbz4Uxn
+    accessKeySecret: 72_dRRNGkMmKhVVM5ag73ZF-FHr7TBLeEo8jkoAU
+    bucketName: g-cloud
+    domain: http://file.sosozj.cn
   sms:
     type: 1  # 短信平台类型
     secretId: mpw:EvC1LR0eGdzeQzkuO7fhEazxGtmdue8FJDzSA1l+gICuOUEDXI8zcjK+VXB2aWKS

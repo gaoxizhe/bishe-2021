@@ -81,7 +81,7 @@ public class CheckImageController extends HttpServlet {
 		// 步骤四 四个随机数字
 		Graphics2D graphics2d = (Graphics2D) graphics;
 		// 设置输出字体
-		graphics2d.setFont(new Font("宋体", Font.BOLD, 18));
+		graphics2d.setFont(new Font("SimSun", Font.BOLD, 18));
 		Random random = new Random();// 生成随机数
 		int index = random.nextInt(words.size());
 		String word = words.get(index-1);// 获得成语
