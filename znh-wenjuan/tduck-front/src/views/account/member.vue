@@ -61,43 +61,43 @@
                         </div>
                     </div>
                 </div>
-                <p class="title pl-10">第三方账号</p>
-                <div v-if="userInfo" class="account-info-view">
-                    <div style="margin-left: 30px; display: flex; flex-direction: row;">
-                        <div class="account-icon-view">
-                            <font-icon class="fab fa-weixin icon" :style="{color:userInfo.wxName?'#3F9F3F':''}" />
-                            <span v-if="userInfo.wxName">
-                                {{ userInfo.wxName }}(已绑定)
-                            </span>
-                            <el-button v-else type="text" @click="bindWxHandle">绑定</el-button>
-                            <el-dialog title="微信扫描二维码绑定"
-                                       width="400px"
-                                       center
-                                       :visible.sync="bindWxDialogVisible"
-                            >
-                                <el-image
-                                    style="width: 150px; height: 150px; display: block; margin: 0 auto;"
-                                    :src="bindWxQrcode"
-                                    fit="fill"
-                                />
-                            </el-dialog>
-                        </div>
-                        <div class="account-icon-view">
-                            <font-icon class="fa fa-qq icon" :style="{color:userInfo.qqName?'#078DF0':''}" />
-                            <span v-if="userInfo.qqName">
-                                {{ userInfo.qqName }}(已绑定)
-                            </span>
-                            <el-button v-else type="text" @click="redirectUrl(qqLoginAuthorizeUrl)">绑定</el-button>
-                        </div>
-                        <div class="account-icon-view">
-                            <font-icon class="fa fa-weibo icon" />
-                            <span v-if="userInfo.wbName">
-                                {{ userInfo.wbName }}(已绑定)
-                            </span>
-                            <el-button v-else type="text">绑定</el-button>
-                        </div>
-                    </div>
-                </div>
+                <!--                <p class="title pl-10">第三方账号</p>-->
+                <!--                <div v-if="userInfo" class="account-info-view">-->
+                <!--                    <div style="margin-left: 30px; display: flex; flex-direction: row;">-->
+                <!--                        <div class="account-icon-view">-->
+                <!--                            <font-icon class="fab fa-weixin icon" :style="{color:userInfo.wxName?'#3F9F3F':''}" />-->
+                <!--                            <span v-if="userInfo.wxName">-->
+                <!--                                {{ userInfo.wxName }}(已绑定)-->
+                <!--                            </span>-->
+                <!--                            <el-button v-else type="text" @click="bindWxHandle">绑定</el-button>-->
+                <!--                            <el-dialog title="微信扫描二维码绑定"-->
+                <!--                                       width="400px"-->
+                <!--                                       center-->
+                <!--                                       :visible.sync="bindWxDialogVisible"-->
+                <!--                            >-->
+                <!--                                <el-image-->
+                <!--                                    style="width: 150px; height: 150px; display: block; margin: 0 auto;"-->
+                <!--                                    :src="bindWxQrcode"-->
+                <!--                                    fit="fill"-->
+                <!--                                />-->
+                <!--                            </el-dialog>-->
+                <!--                        </div>-->
+                <!--                        <div class="account-icon-view">-->
+                <!--                            <font-icon class="fa fa-qq icon" :style="{color:userInfo.qqName?'#078DF0':''}" />-->
+                <!--                            <span v-if="userInfo.qqName">-->
+                <!--                                {{ userInfo.qqName }}(已绑定)-->
+                <!--                            </span>-->
+                <!--                            <el-button v-else type="text" @click="redirectUrl(qqLoginAuthorizeUrl)">绑定</el-button>-->
+                <!--                        </div>-->
+                <!--                        <div class="account-icon-view">-->
+                <!--                            <font-icon class="fa fa-weibo icon" />-->
+                <!--                            <span v-if="userInfo.wbName">-->
+                <!--                                {{ userInfo.wbName }}(已绑定)-->
+                <!--                            </span>-->
+                <!--                            <el-button v-else type="text">绑定</el-button>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
         </el-card>
         <div>
@@ -209,13 +209,11 @@
 <script>
 import myUpload from 'vue-image-crop-upload'
 import constants from '@/utils/constants'
-import FontIcon from '@/components/FontIcon'
 import {getCurrentDomain} from '@/utils'
 
 export default {
     name: 'Member',
     components: {
-        FontIcon,
         myUpload
     },
     data() {
