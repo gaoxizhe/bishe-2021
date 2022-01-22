@@ -73,6 +73,11 @@ public class UserProjectItemEntity extends BaseEntity<UserProjectItemEntity> {
      * 输入型提示文字
      */
     private String placeholder;
+
+    /**
+     * 答案
+     */
+    private String answer;
     /**
      * 排序
      */

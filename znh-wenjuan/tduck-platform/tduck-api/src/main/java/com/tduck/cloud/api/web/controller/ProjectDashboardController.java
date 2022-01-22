@@ -56,7 +56,6 @@ public class ProjectDashboardController {
         return Result.success(projectDashboardService.projectReportSituation(projectKey));
     }
 
-
     /**
      * 项目收集位置情况
      */

@@ -23,6 +23,7 @@ export function formItemConvertData(item, projectKey) {
         'defaultValue': item.__config__.defaultValue,
         'required': item.__config__.required,
         'placeholder': item.placeholder,
+        'answer': item.answer,
         'regList': item.__config__.regList,
         'showLabel': item.__config__.showLabel,
         'span': item.__config__.span,
@@ -91,6 +92,7 @@ export function dbDataConvertForItemJson(data) {
     }
     jsonItem.regList = data.regList
     jsonItem.placeholder = data.placeholder
+    jsonItem.answer = data.answer
     jsonItem.formItemId = data.formItemId
     jsonItem.__vModel__ = 'field' + data.formItemId
     return jsonItem

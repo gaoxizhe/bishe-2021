@@ -281,12 +281,15 @@ export default {
         },
         queryProjectItems() {
             this.$api.get('/user/project/item/list', {params: {key: this.projectKey}}).then(res => {
+                console.log(res)
                 this.drawingList = res.data.map(item => dbDataConvertForItemJson(item))
+                console.log(this.drawingList)
                 // 更新分页
                 this.updatePaginationList()
             })
         },
         activeFormItem(currentItem) {
+            console.log(currentItem)
             this.activeData = currentItem
             this.activeId = currentItem.__config__.formId
         },

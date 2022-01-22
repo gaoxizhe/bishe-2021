@@ -2,6 +2,7 @@ package com.tduck.cloud.project.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tduck.cloud.common.entity.BaseEntity;
@@ -11,6 +12,7 @@ import lombok.experimental.Accessors;
 import lombok.experimental.FieldNameConstants;
 
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,6 +33,19 @@ public class UserProjectResultEntity extends BaseEntity<UserProjectResultEntity>
      */
     @TableId
     private Long id;
+
+    /**
+     * 九型人格
+     */
+    @TableField(exist = false)
+    private Nine nine;
+
+    /**
+     * 九型人格
+     */
+    @TableField(exist = false)
+    private List<Double> nineArray;
+
     /**
      * 项目key
      */

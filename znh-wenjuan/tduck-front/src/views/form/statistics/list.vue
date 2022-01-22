@@ -87,6 +87,15 @@
                         <div slot="header" class="clearfix">
                             <span>提交详情</span>
                         </div>
+                        <div class="clearfix">
+                            <p>九型人格雷达图</p>
+                            <nine-chart
+                                class="nine"
+                                :chart-option="getCharData()"
+                                :width="'90%'"
+                            />
+                            <el-divider />
+                        </div>
                         <div>
                             <div v-for="item in projectItemList" :key="item.id">
                                 <h4>{{ item.label }}</h4>
@@ -157,7 +166,7 @@ import _ from 'lodash'
 import ResultItem from './item'
 import DataFilter from './filter'
 import {getCheckedColumn, saveCheckedColumn} from '@/utils/db'
-
+import NineChart from '@/components/echarts/NineChart'
 // 头部固定标签
 const fixedDefaultFormColumn = ['serialNumber']
 const fixedDefaultLabelFormColumn = {serialNumber: '提交序号'}
@@ -169,7 +178,8 @@ export default {
     name: 'ProjectStatisticsList',
     components: {
         ResultItem,
-        DataFilter
+        DataFilter,
+        NineChart
     },
     data() {
         return {
@@ -214,6 +224,10 @@ export default {
         this.queryProjectItems()
         this.queryProject()
     }, methods: {
+        getCharData() {
+            console.log(this.activeResultRow)
+            return this.activeResultRow.nineArray
+        },
         renderHeader() {
             return (
                 <i class="el-icon-setting" style="color:currentColor"

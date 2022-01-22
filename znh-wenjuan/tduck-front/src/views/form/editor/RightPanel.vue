@@ -72,6 +72,16 @@
             />
           </el-form-item>
           <el-form-item
+            v-if="activeData.answer !== undefined"
+            label="参考答案"
+          >
+            <el-input
+              v-model="activeData.answer"
+              placeholder="参考答案"
+              @input="changeRenderKey"
+            />
+          </el-form-item>
+          <el-form-item
             v-if="activeData['start-placeholder'] !== undefined"
             label="开始占位"
           >

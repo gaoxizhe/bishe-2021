@@ -18,6 +18,7 @@ import com.tduck.cloud.common.util.AddressUtils;
 import com.tduck.cloud.common.util.AsyncProcessUtils;
 import com.tduck.cloud.common.util.RedisUtils;
 import com.tduck.cloud.common.util.Result;
+import com.tduck.cloud.project.entity.Nine;
 import com.tduck.cloud.project.entity.UserProjectItemEntity;
 import com.tduck.cloud.project.entity.UserProjectResultEntity;
 import com.tduck.cloud.project.entity.enums.ProjectItemTypeEnum;
@@ -30,12 +31,14 @@ import com.tduck.cloud.project.vo.ExportProjectResultVO;
 import com.tduck.cloud.storage.cloud.OssStorageFactory;
 import com.tduck.cloud.storage.util.StorageUtils;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.system.ApplicationHome;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -53,6 +56,7 @@ public class UserProjectResultServiceImpl extends ServiceImpl<UserProjectResultM
 
     private final UserProjectItemService userProjectItemService;
     private final RedisUtils redisUtils;
+    private final UserProjectItemService projectItemService;
 
     /**
      * 需要处理类型
@@ -88,7 +92,95 @@ public class UserProjectResultServiceImpl extends ServiceImpl<UserProjectResultM
                 lambdaQueryWrapper.apply(StrUtil.format("original_data ->'$.{}' {} {} ", item, queryComparison.getKey(), value));
             });
         }
-        return this.page(request.toMybatisPage(), lambdaQueryWrapper);
+        // 返回page对象
+        Page page = page(request.toMybatisPage(), lambdaQueryWrapper);
+        List<UserProjectResultEntity> records = page.getRecords();
+
+        List<UserProjectItemEntity> itemEntityList = projectItemService.list(Wrappers.<UserProjectItemEntity>lambdaQuery()
+                .eq(UserProjectItemEntity::getProjectKey, request.getProjectKey())
+                .orderByAsc(UserProjectItemEntity::getSort)
+        );
+        int size = itemEntityList.size();
+        AtomicInteger init = new AtomicInteger(100);
+        String pre = "field";
+        records.forEach(userProjectResultEntity -> {
+            // {"field101": "是", "field102": "否", "field103": "否", "field104": "是", "field101other": "", "field102other": "", "field103other": "", "field104other": ""}
+            Map<String, Object> processData = userProjectResultEntity.getProcessData();
+            Nine nine = new Nine();
+            for (int i = 0; i < size; i++) {
+                init.addAndGet(1);
+                String isCheck = (String) processData.get(pre + (init));
+                String answer = itemEntityList.get(i).getAnswer();
+                if (StringUtils.isNotBlank(isCheck) && StringUtils.isNotBlank(answer)) {
+                    calcNine(nine, isCheck, answer);
+                }
+            }
+            userProjectResultEntity.setNine(nine);
+            ArrayList<Double> objects = new ArrayList<>();
+            objects.add(nine.getOneScale());
+            objects.add(nine.getTwoScale());
+            objects.add(nine.getThreeScale());
+
+            objects.add(nine.getFourScale());
+            objects.add(nine.getFiveScale());
+            objects.add(nine.getSixScale());
+
+            objects.add(nine.getSevenScale());
+            objects.add(nine.getEightScale());
+            objects.add(nine.getNineScale());
+            userProjectResultEntity.setNineArray(objects);
+
+        });
+        return page;
+    }
+
+    private void calcNine(Nine nine, String isCheck, String answer) {
+        if (answer.contains("和平")) {
+            nine.setOneTotal(nine.getOneTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setOneSelect(nine.getOneSelect() + 1);
+            }
+        } else if (answer.contains("忠诚")) {
+            nine.setTwoTotal(nine.getTwoTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setTwoSelect(nine.getTwoSelect()+ 1);
+            }
+        } else if (answer.contains("成就")) {
+            nine.setThreeTotal(nine.getThreeTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setThreeSelect(nine.getThreeSelect()+ 1);
+            }
+        } else if (answer.contains("完美")) {
+            nine.setFourTotal(nine.getFourTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setFourSelect(nine.getFourSelect()+ 1);
+            }
+        } else if (answer.contains("感觉")) {
+            nine.setFiveTotal(nine.getFiveTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setFiveSelect(nine.getFiveSelect()+ 1);
+            }
+        } else if (answer.contains("助人")) {
+            nine.setSixTotal(nine.getSixTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setSixSelect(nine.getSixSelect()+ 1);
+            }
+        } else if (answer.contains("领袖")) {
+            nine.setSevenTotal(nine.getSevenTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setSevenSelect(nine.getSevenSelect()+ 1);
+            }
+        } else if (answer.contains("思想")) {
+            nine.setEightTotal(nine.getEightTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setEightSelect(nine.getEightSelect()+ 1);
+            }
+        } else if (answer.contains("活跃")) {
+            nine.setNineTotal(nine.getNineTotal() + 1);
+            if (isCheck.contains("是")) {
+                nine.setNineSelect(nine.getNineSelect()+ 1);
+            }
+        }
     }
 
     @Override

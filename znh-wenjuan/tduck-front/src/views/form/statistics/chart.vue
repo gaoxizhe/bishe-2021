@@ -49,6 +49,14 @@
                 </div>
             </div>
         </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+            <div style="width: 100%;">
+                <p class="tag-title">九型人格</p>
+                <div>
+                    <pie-chart :width="'48vw'" :chart-option="pieChartOptionData" :height="'250px'" />
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -234,6 +242,32 @@ export default {
                             show: false
                         },
                         data: [0]
+                    }
+                ]
+            },
+            nineChartOptionData: {
+                radar: {
+                    // shape: 'circle',
+                    indicator: [
+                        { name: '1型完美型', max: 10 },
+                        { name: '2型助人型', max: 10 },
+                        { name: '3型成就型', max: 10 },
+                        { name: '4型自我型', max: 10 },
+                        { name: '5型理智型', max: 10 },
+                        { name: '6型怀疑型', max: 10 },
+                        { name: '7型活跃型', max: 10 },
+                        { name: '8型领袖型', max: 10 },
+                        { name: '9型和平型', max: 10 }
+                    ]
+                },
+                series: [
+                    {
+                        type: 'radar',
+                        data: [
+                            {
+                                value: [1, 3, 4, 5, 7, 9, 9, 9, 9]
+                            }
+                        ]
                     }
                 ]
             }

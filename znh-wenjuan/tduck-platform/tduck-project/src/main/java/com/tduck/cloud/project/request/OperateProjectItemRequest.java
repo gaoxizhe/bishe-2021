@@ -60,6 +60,10 @@ public class OperateProjectItemRequest {
      */
     private String placeholder;
     /**
+     * 答案
+     */
+    private String answer;
+    /**
      * 排序
      */
     private Integer sort;
