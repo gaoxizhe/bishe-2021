@@ -1,0 +1,47 @@
+server:
+  port: 9999
+# redis配置
+spring:
+  redis:
+    #redis地址
+    host: 106.13.30.116
+    #redis端口
+    port: 6379
+    #redis密码
+    password: redis
+    # 选择redis的数据库的分库
+    database: 0
+    #redis连接池配置
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 15000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: GAOxi11223344@
+    url: jdbc:mysql://106.13.30.116:3306/upms?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2b8
+    type: com.alibaba.druid.pool.DruidDataSource
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+
+
+shiro:
+  # 免认证的路径配置，如静态资源，注册页面，验证码请求等
+  anon-url: /api/sessionOut,/api/login,/api/register,/api/registerEnd,/api/team,/swagger-ui.html
+  # 登录 url
+  login-url: /api/sessionOut
+  timeout: 3600000
+  unauthorized-url: /api/sessionOut
+
+#是否激活 swagger true or false
+swagger:
+  enable: true
